@@ -111,3 +111,6 @@ export const caseStudies = [
     }
   }
 ];
+
+// Add this line at the end of the file
+export default caseStudies;
