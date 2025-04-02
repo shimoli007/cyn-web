@@ -1,0 +1,125 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global CSS Variables */
+:root {
+  --primary-gradient-from: #f97316; /* Orange-400 */
+  --primary-gradient-to: #ef4444; /* Red-500 */
+  --secondary-blue-from: #1e3a8a; /* Blue-900 */
+  --secondary-blue-to: #172554; /* Blue-950 */
+  --text-primary: #1f2937; /* Gray-800 */
+  --text-secondary: #4b5563; /* Gray-600 */
+}
+
+/* Base styles */
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--text-primary);
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Custom utility classes */
+@layer components {
+  /* Changed from gradient to solid color */
+  .gradient-primary {
+    @apply bg-orange-400;
+  }
+  
+  /* Changed from gradient to solid color */
+  .gradient-blue {
+    @apply bg-blue-900;
+  }
+  
+  /* Changed from gradient to solid color */
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-orange-400;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply rounded-md transition-all flex items-center justify-center;
+  }
+  
+  /* Changed from gradient to solid color */
+  .btn-primary {
+    @apply btn bg-orange-400 text-white hover:bg-orange-500 shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-transparent border border-gray-300 text-gray-700 hover:bg-gray-100;
+  }
+  
+  .btn-outline {
+    @apply btn bg-transparent border border-white text-white hover:bg-white hover:text-blue-900;
+  }
+  
+  /* Section padding */
+  .section-padding {
+    @apply py-16 px-6;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply max-w-6xl mx-auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--primary-gradient-from);
+  outline-offset: 2px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 1.875rem; /* 30px */
+  }
+  
+  h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none;
+  }
+  
+  body {
+    font-size: 12pt;
+  }
+}
